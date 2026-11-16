@@ -58,7 +58,7 @@ try {
 } catch (Throwable $e) {
     // DNI repetido (restriccion UNIQUE) -> mensaje entendible
     if (str_contains($e->getMessage(), "UNIQUE") || str_contains($e->getMessage(), "23000")) {
-        $msg = "Error: El DNI ya esta registrado";
+        $msg = "Error: Código ya existe";
     } else {
         $msg = "Error: " . $e->getMessage();
     }

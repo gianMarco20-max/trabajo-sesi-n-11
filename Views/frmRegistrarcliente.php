@@ -19,13 +19,11 @@
                 let hayVacios = false;
                 let primerVacio = null;
 
-                // Limpiar estilos previos
                 requiredFields.forEach(name => {
                     const input = form.querySelector('input[name="' + name + '"]');
                     input.classList.remove('error-field');
                 });
 
-                // Verificar campos requeridos
                 requiredFields.forEach(name => {
                     const input = form.querySelector('input[name="' + name + '"]');
                     if (!input.value.trim()) {
@@ -36,14 +34,11 @@
                 });
 
                 if (hayVacios) {
-                    e.preventDefault(); // NO envía al servidor
-                    alert('Datos incompletos'); // Alert naranja (caja naranja)
-                    if (primerVacio) {
-                        primerVacio.focus(); // Flecha naranja: regresa al usuario
-                    }
+                    e.preventDefault();
+                    alert('Datos incompletos');
+                    if (primerVacio) primerVacio.focus();
                     return false;
                 }
-                // Si pasa, se envía al servidor normalmente
             });
         });
     </script>
@@ -54,13 +49,13 @@
         <input type="hidden" name="accion" value="insertar">
 
         <label>DNI</label>
-        <input type="text" name="dni" maxlength="8" pattern="\d{8}" title="8 digitos" required>
+        <input type="text" name="dni" maxlength="8" pattern="\d{8}" title="8 digitos">
 
         <label>Nombres</label>
-        <input type="text" name="nombres" maxlength="60" required>
+        <input type="text" name="nombres" maxlength="60">
 
         <label>Apellidos</label>
-        <input type="text" name="apellidos" maxlength="60" required>
+        <input type="text" name="apellidos" maxlength="60">
 
         <label>Telefono</label>
         <input type="text" name="telefono" maxlength="15">

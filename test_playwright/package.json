@@ -1,0 +1,13 @@
+{
+  "name": "test-playwright",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Pruebas automaticas de LABORAT-09 con Playwright",
+  "scripts": {
+    "test": "playwright test",
+    "report": "playwright show-report"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.65.1"
+  }
+}
