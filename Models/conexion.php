@@ -27,9 +27,11 @@ function conectar()
         }
     }
 
+    // El detalle tecnico solo va al log del servidor, nunca a la pagina
+    error_log("trabajo09: " . ($ultimoError ? $ultimoError->getMessage() : "sin detalle"));
+
     throw new RuntimeException(
-        "No se pudo conectar a la base de datos trabajo09. " .
-        "Verifica que el servicio SQL Server (SQLEXPRESS) este iniciado. " .
-        "Detalle: " . ($ultimoError ? $ultimoError->getMessage() : "sin detalle")
+        "No se pudo conectar a la base de datos. " .
+        "Verifique que el servicio SQL Server (SQLEXPRESS) este iniciado."
     );
 }
